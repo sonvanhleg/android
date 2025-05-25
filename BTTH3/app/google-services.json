@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "852034179131",
+    "firebase_url": "https://btth3-fbae4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "btth3-fbae4",
+    "storage_bucket": "btth3-fbae4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:852034179131:android:a86a36add5c3dea4eecc1e",
+        "android_client_info": {
+          "package_name": "com.example.btth3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKhShPaS-162WK29sJwTKR1PQ-8Gq5mCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

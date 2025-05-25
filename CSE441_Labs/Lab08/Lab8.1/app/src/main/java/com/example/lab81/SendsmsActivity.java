@@ -1,9 +1,12 @@
 package com.example.lab81;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,32 +14,34 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-    Button btncallp ,btnsends;
+public class SendsmsActivity extends AppCompatActivity {
+    EditText edtsend;
+    ImageButton btnsend;
+    Button btnback2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sendsms);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        btncallp = (Button) findViewById(R.id.btncallp);
-        btnsends = (Button) findViewById(R.id.btnsends);
-        btncallp.setOnClickListener(new View.OnClickListener() {
+        edtsend = (EditText) findViewById(R.id.edtsend);
+        btnsend = (ImageButton) findViewById(R.id.btnsend);
+        btnback2 = (Button) findViewById(R.id.btnback2);
+        btnsend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(MainActivity.this,CallPhoneActivity.class);
-                startActivity(intent1);
+                Intent sendintent = new Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:"+edtsend.getText().toString()));
+                startActivity(sendintent);
             }
         });
-        btnsends.setOnClickListener(new View.OnClickListener() {
+        btnback2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this,SendsmsActivity.class);
-                startActivity(intent2);
+                finish();
             }
         });
     }

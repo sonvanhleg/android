@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Lab8.1"
+rootProject.name = "BTTH3"
 include(":app")
+ 
